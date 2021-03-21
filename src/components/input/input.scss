@@ -1,0 +1,99 @@
+@import "../../constants.scss";
+
+.input {
+  &Selection {
+    padding: 5px;
+    background-color: $theme-color-dark;
+    display: inline-block;
+    border-radius: $default-radius;
+    position: relative;
+
+    &Delete {
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      outline: none;
+      padding: 5px 10px;
+      box-sizing: border-box;
+      border-radius: $default-radius;
+      color: red !important;
+      &:hover {
+        background-color: $theme-color-light;
+      }
+    }
+
+    > div {
+      height: auto;
+      position: relative;
+      &:first-child {
+        > textarea {
+          resize: none;
+          background-color: $theme-color-normal;
+          border: $default-border-size solid $theme-border;
+          border-radius: $default-radius;
+          color: inherit;
+          padding: $default-big-padding;
+          height: auto;
+          overflow-wrap: normal;
+          overflow-x: hidden;
+          transition: 0.3s;
+          font-size: $default-header-font-size;
+          outline: none;
+          &:focus {
+            background-color: $theme-color-light;
+            border: $default-border-size solid $theme-outline;
+          }
+        }
+      }
+      > div {
+        > div {
+          display: flex;
+          flex-direction: column;
+          overflow-y: auto;
+          padding: 2px 0;
+
+          > div {
+            background-color: $theme-color-normal;
+            border-radius: $default-radius;
+            padding: $default-padding;
+            margin: $default-margin;
+            user-select: none;
+            opacity: $theme-transparency;
+          }
+        }
+      }
+    }
+
+    &Cell {
+      text-align: left;
+      margin: 1px 2px;
+      padding: $default-element-padding $default-padding;
+    }
+
+    &Add {
+      &Section {
+        margin: $default-margin;
+        padding: $default-padding;
+        background-color: $theme-color-normal;
+        border-radius: $default-radius;
+        display: flex;
+        > div {
+          margin: $default-margin;
+          user-select: none;
+          flex-grow: 1;
+          display: flex;
+          align-items: center;
+          line-break: auto;
+        }
+        > button {
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          padding: $default-big-padding;
+          background-color: $theme-color-dark;
+        }
+      }
+    }
+  }
+}

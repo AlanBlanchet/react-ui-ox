@@ -1,0 +1,32 @@
+$theme-text-color: white;
+$theme-transparency: 0.8;
+
+$theme-color-normal: rgb(30, 30, 30);
+$theme-color-light: rgb(40, 40, 40);
+$theme-color-very-light: rgb(60, 60, 60);
+$theme-color-dark: rgb(20, 20, 20);
+$theme-color-normal-see-though: rgba(30, 30, 30, $theme-transparency);
+$theme-color-light-see-though: rgba(40, 40, 40, $theme-transparency);
+$theme-color-dark-see-though: rgba(20, 20, 20, $theme-transparency);
+
+$theme-color-scrollbar: $theme-color-dark;
+$theme-color-scrollbar-track: $theme-color-normal;
+$theme-color-scrollbar-thumb: $theme-color-light;
+
+$theme-border: $theme-color-dark-see-though;
+$theme-outline: white;
+$default-border-size: 2px;
+$default-outline-size: $default-border-size;
+
+$default-radius: 5px;
+
+$default-padding: 5px;
+$default-big-padding: 8px;
+$default-element-padding: 10px;
+
+$default-margin: $default-padding;
+$default-big-margin: $default-big-padding;
+$default-element-margin: $default-element-padding;
+
+$default-font-size: 1em;
+$default-header-font-size: 1.2em;
