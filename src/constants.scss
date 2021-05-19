@@ -1,13 +1,36 @@
 $theme-text-color: white;
-$theme-transparency: 0.8;
+$theme-transparency-normal: 0.8;
+$theme-transparency-high: 0.4;
 
 $theme-color-normal: rgb(30, 30, 30);
 $theme-color-light: rgb(40, 40, 40);
 $theme-color-very-light: rgb(60, 60, 60);
 $theme-color-dark: rgb(20, 20, 20);
-$theme-color-normal-see-though: rgba(30, 30, 30, $theme-transparency);
-$theme-color-light-see-though: rgba(40, 40, 40, $theme-transparency);
-$theme-color-dark-see-though: rgba(20, 20, 20, $theme-transparency);
+$theme-color-normal-see-though: rgba(
+  $theme-color-normal,
+  $theme-transparency-normal
+);
+$theme-color-light-see-though: rgba(
+  $theme-color-light,
+  $theme-transparency-normal
+);
+$theme-color-dark-see-though: rgba(
+  $theme-color-dark,
+  $theme-transparency-normal
+);
+
+$theme-color-normal-see-though-high: rgba(
+  $theme-color-normal,
+  $theme-transparency-high
+);
+$theme-color-light-see-though-high: rgba(
+  $theme-color-light,
+  $theme-transparency-high
+);
+$theme-color-dark-see-though-high: rgba(
+  $theme-color-dark,
+  $theme-transparency-high
+);
 
 $theme-color-scrollbar: $theme-color-dark;
 $theme-color-scrollbar-track: $theme-color-normal;
@@ -30,3 +53,5 @@ $default-element-margin: $default-element-padding;
 
 $default-font-size: 1em;
 $default-header-font-size: 1.2em;
+
+$default-checkbox-size: 20px;

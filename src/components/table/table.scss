@@ -1,0 +1,51 @@
+@import "../../constants.scss";
+
+.table {
+  //background-color: $theme-color-normal;
+  margin: $default-big-margin;
+  border-spacing: 0;
+  border: 2px solid $theme-color-light;
+  border-radius: 7px;
+
+  > thead,
+  > tbody {
+    > tr {
+      > td,
+      > th {
+        border: 1px solid $theme-color-light-see-though;
+        padding: $default-padding;
+      }
+    }
+
+    &:is(thead) {
+      background-color: $theme-color-dark;
+      border-top-left-radius: $default-radius;
+      border-top-right-radius: $default-radius;
+      > tr {
+        > th {
+          &:first-child {
+            border-top-left-radius: $default-radius;
+          }
+          &:last-child {
+            border-top-right-radius: $default-radius;
+          }
+        }
+      }
+    }
+
+    &:is(tbody) {
+      > tr {
+        &:last-child {
+          > td {
+            &:first-child {
+              border-bottom-left-radius: $default-radius;
+            }
+            &:last-child {
+              border-bottom-right-radius: $default-radius;
+            }
+          }
+        }
+      }
+    }
+  }
+}

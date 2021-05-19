@@ -59,7 +59,7 @@
             padding: $default-padding;
             margin: $default-margin;
             user-select: none;
-            opacity: $theme-transparency;
+            opacity: $theme-transparency-normal;
           }
         }
       }
@@ -96,4 +96,47 @@
       }
     }
   }
+
+  &Checkbox {
+    position: relative;
+    width: $default-checkbox-size;
+    height: $default-checkbox-size;
+    cursor: pointer;
+
+    > button,
+    > span {
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: $default-radius;
+      color: $theme-text-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+
+      &:is(span) {
+        background-color: $theme-color-normal;
+        border: $default-border-size solid $theme-color-light;
+        z-index: 2;
+      }
+
+      &:is(button) {
+        position: absolute;
+        z-index: 1;
+        border: none;
+        background-color: rgba(0, 0, 0, 0);
+        cursor: pointer;
+
+        &:hover {
+          background-color: $theme-color-light-see-though-high;
+        }
+      }
+    }
+  }
+}
+
+.active {
+  background-color: green !important;
 }
