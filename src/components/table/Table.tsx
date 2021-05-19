@@ -29,7 +29,7 @@ class Table extends React.Component<TableProps, TableState> {
   }
 
   handleSelect = (index: number) => {
-    this.setState((state, props): TableState => {
+    this.setState((state): TableState => {
       const selection: number[] = [...state.selected];
       !selection.includes(index) && selection.push(index);
       return {
@@ -43,7 +43,7 @@ class Table extends React.Component<TableProps, TableState> {
   };
 
   handleDeselect = (index: number) => {
-    this.setState((state, props) => {
+    this.setState((state) => {
       const i = state.selected.indexOf(index);
       return {
         selected:
