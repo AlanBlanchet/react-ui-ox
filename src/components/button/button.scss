@@ -11,4 +11,12 @@
   &:hover {
     background-color: $theme-color-light;
   }
+
+  &Alternate {
+    background-color: transparent;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
 }

@@ -2,6 +2,14 @@ import "./App.scss";
 import * as React from "react";
 import SelectionInputAdd from "./input/SelectionInputAdd";
 import Table, { TablePropsData } from "./table/Table";
+import AlternateButton from "./button/AlternateButton";
+import SimpleButton from "./button/SimpleButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faAngleDown,
+  faAngleRight,
+  faAngleUp
+} from "@fortawesome/free-solid-svg-icons";
 
 export interface AppProps {}
 
@@ -9,8 +17,8 @@ export interface AppState {}
 
 class App extends React.Component<AppProps, AppState> {
   render() {
-    const dNum = 30;
-    const rNum = 20;
+    const dNum = 10;
+    const rNum = 5;
     const data: TablePropsData = {
       headers: [...new Array(dNum).keys()].map((name) => {
         return {
