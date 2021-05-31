@@ -2,11 +2,7 @@ import "./table.scss";
 import * as React from "react";
 import Checkbox from "../../components/input/Checkbox";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAngleDown,
-  faAngleRight,
-  faAngleUp
-} from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import AlternateButton from "../button/AlternateButton";
 
 export type TablePropsData = {

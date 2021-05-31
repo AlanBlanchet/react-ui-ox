@@ -1,15 +1,8 @@
-import "./App.scss";
+import "../global.scss";
 import * as React from "react";
-import SelectionInputAdd from "./input/SelectionInputAdd";
+import SelectionInputAdd from "@Components/input/SelectionInputAdd";
 import Table, { TablePropsData } from "./table/Table";
-import AlternateButton from "./button/AlternateButton";
-import SimpleButton from "./button/SimpleButton";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAngleDown,
-  faAngleRight,
-  faAngleUp
-} from "@fortawesome/free-solid-svg-icons";
+import LabelButton from "./button/LabelButton";
 
 export interface AppProps {}
 
@@ -33,6 +26,7 @@ class App extends React.Component<AppProps, AppState> {
 
     return (
       <div>
+        <LabelButton title={"Hello"} description={"AAAALO"}></LabelButton>
         <Table data={data}>Alo</Table>
         <SelectionInputAdd
           data={[

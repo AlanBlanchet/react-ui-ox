@@ -1,22 +1,39 @@
-@import "../../constants.scss";
+@import "@Root/global";
+@import "@Root/mixins";
 
 .button {
-  background-color: $theme-color-normal;
-  color: inherit;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
+  @include pm();
+
   border-radius: $default-radius;
+  font-weight: bold;
+  cursor: pointer;
   transition: 0.3s;
-  &:hover {
-    background-color: $theme-color-light;
-  }
+
+  @include backgroundTheme();
 
   &Alternate {
     background-color: transparent;
 
     &:hover {
       background-color: transparent;
+    }
+  }
+
+  &Label {
+    @include flex();
+    @include border();
+    width: 500px;
+
+    > * {
+      margin: $default-margin;
+    }
+
+    > label {
+      font-size: $default-header-big-font-size;
+    }
+
+    > p {
+      flex-grow: 1;
     }
   }
 }

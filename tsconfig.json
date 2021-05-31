@@ -5,11 +5,10 @@
     "strictNullChecks": true,
     "moduleResolution": "node",
     "allowJs": true,
-    "noEmit": true,
+    "sourceMap": true,
     "strict": true,
     "esModuleInterop": true,
     "jsx": "react",
-    "baseUrl": "./src",
     "lib": [
       "es2015",
       "dom.iterable",
@@ -28,6 +27,11 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
-    "importHelpers": true
+    "importHelpers": true,
+    "baseUrl": ".",
+    "paths": {
+      "@Components/*": ["src/components/*"],
+      "@Root/*": ["src/*"]
+    }
   }
 }

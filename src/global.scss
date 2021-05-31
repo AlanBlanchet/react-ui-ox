@@ -1,9 +1,29 @@
-@import "../constants.scss";
+@import "@Root/constants";
+@import "@Root/mixins";
 
 body {
   background-color: rgb(63, 63, 63);
   color: $theme-text-color;
   font-family: Arial;
+}
+
+button {
+  @include resetStyle();
+  color: inherit;
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+  background-color: $theme-color-normal;
+  border: $default-border-size solid $theme-border;
+  border-radius: $default-radius;
+  color: inherit;
+  outline: none;
+  &:focus {
+    background-color: $theme-color-light;
+    border: $default-border-size solid $theme-outline;
+  }
 }
 
 *::-webkit-scrollbar-track {
@@ -24,8 +44,7 @@ body {
 }
 
 hr {
-  color: red;
-  background-color: green;
+  background-color: $theme-color-normal;
   border: $default-border-size solid $theme-color-normal;
   border-radius: $default-radius;
   margin: $default-margin;

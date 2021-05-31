@@ -1,0 +1,100 @@
+@import "@Root/constants";
+
+@mixin pm($padding: $default-padding, $margin: $default-margin) {
+  @include pm-v($padding, $margin);
+  @include pm-h($padding, $margin);
+}
+
+@mixin pm-v($padding: $default-padding, $margin: $default-margin) {
+  padding-top: $padding;
+  padding-bottom: $padding;
+  margin-top: $margin;
+  margin-bottom: $margin;
+}
+
+@mixin pm-h($padding: $default-padding, $margin: $default-margin) {
+  padding-left: $padding;
+  padding-right: $padding;
+  margin-left: $margin;
+  margin-right: $margin;
+}
+
+@mixin pm-flex(
+  $padding: $default-padding,
+  $margin: $default-margin,
+  $direction: row,
+  $content: center,
+  $items: center
+) {
+  @include pm($padding, $margin);
+  @include flex($direction, $content, $items);
+}
+
+@mixin border(
+  $color: $theme-border,
+  $size: $default-border-size,
+  $radius: $default-radius,
+  $type: border-box
+) {
+  border: $size solid $color;
+  border-radius: $radius;
+  box-sizing: border-box;
+}
+
+@mixin backgroundTheme(
+  $normal: $theme-color-normal,
+  $hover: $theme-color-light
+) {
+  background-color: $normal;
+  &:hover {
+    background-color: $hover;
+  }
+}
+
+@mixin flex($direction: row, $content: center, $items: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $content;
+  align-items: $items;
+}
+
+@mixin size($size: $default-size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin size-wh($width: $default-size, $height: $default-height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin position(
+  $position: $default-position,
+  $topBottom: $default-top,
+  $leftRight: $default-right,
+  $side: 1
+) {
+  position: $position;
+  @if ($side == 1) {
+    top: $topBottom;
+    left: $leftRight;
+  } @else {
+    bottom: $topBottom;
+    right: $leftRight;
+  }
+}
+
+@mixin resetBorder() {
+  border: none;
+  border-radius: 0;
+  outline: 0;
+}
+
+@mixin resetStyle() {
+  @include resetBorder();
+}
+
+@mixin resetText() {
+  text-decoration: none;
+  color: $theme-text-color;
+}

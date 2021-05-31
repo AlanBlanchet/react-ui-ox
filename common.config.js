@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { TsConfigPathsPlugin } = require("awesome-typescript-loader");
 const path = require("path");
 
 module.exports = {
@@ -10,34 +11,17 @@ module.exports = {
     publicPath: "/"
   },
   devtool: "inline-source-map",
-  devServer: {
-    historyApiFallback: true
-  },
   module: {
     rules: [
       {
-        test: /\.(j|t)s.$/,
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        use: ["babel-loader", "ts-loader"]
       },
       {
         test: /\.scss$/,
         exclude: /node_modules/,
         use: ["style-loader", "css-loader", "sass-loader"]
-      },
-      {
-        test: /\.css$/,
-        exclude: /node_modules/,
-        use: ["style-loader", "css-loader"]
-      },
-      {
-        test: /\.(graphql|gql)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "graphql-tag/loader"
-        }
       }
     ]
   },
@@ -47,6 +31,11 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: [".js", ".jsx", ".tsx"]
+    extensions: [".js", ".tsx"],
+    plugins: [
+      new TsConfigPathsPlugin({
+        configFile: "./tsconfig.json"
+      })
+    ]
   }
 };

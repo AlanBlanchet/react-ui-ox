@@ -1,19 +1,24 @@
-@import "../../constants.scss";
+@import "@Root/constants";
+@import "@Root/mixins";
 
 .table {
-  //background-color: $theme-color-normal;
-  margin: $default-big-margin;
+  @include pm(0, $default-big-margin);
+  @include border(
+    $theme-color-light,
+    $default-border-size,
+    $default-big-radius,
+    content-box
+  );
+  box-sizing: unset;
   border-spacing: 0;
-  border: 2px solid $theme-color-light;
-  border-radius: 7px;
 
   > thead,
   > tbody {
     > tr {
       > td,
       > th {
+        @include pm($default-big-padding, 0);
         border: 1px solid $theme-color-light-see-though;
-        padding: $default-big-padding;
       }
     }
 
@@ -31,9 +36,10 @@
           }
           &:not(:first-child) {
             cursor: pointer;
-            &:hover {
-              background-color: $theme-color-light-see-though-high;
-            }
+            @include backgroundTheme(
+              transparent,
+              $theme-color-light-see-though-high
+            );
           }
         }
       }
