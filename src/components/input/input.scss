@@ -3,7 +3,7 @@
 
 .input {
   &Selection {
-    @include pm($default-padding, 0);
+    @include pm($default-pm, 0);
     @include position();
     display: inline-block;
     background-color: $theme-color-dark;
@@ -13,8 +13,8 @@
       @include position(absolute, 50%, 5px, 2);
       @include resetBorder();
       @include border(transparent);
-      @include pm-v($default-padding, 0);
-      @include pm-h($default-element-padding, 0);
+      @include pm-v($default-pm, 0);
+      @include pm-h($default-pm-huge, 0);
 
       transform: translateY(50%);
       box-sizing: border-box;
@@ -28,7 +28,7 @@
 
       &:first-child {
         > textarea {
-          @include pm($default-big-padding, 0);
+          @include pm($default-pm-big, 0);
           @include size-wh(auto, 100%);
           display: block;
           overflow-wrap: normal;
@@ -41,7 +41,7 @@
         > div {
           @include flex(column, start, stretch);
           overflow-y: auto;
-          padding: $default-padding-small 0;
+          padding: $default-pm-small 0;
 
           > div {
             @include pm();
@@ -57,8 +57,8 @@
 
     &Cell {
       text-align: left;
-      @include pm-v($default-element-padding, 1px);
-      @include pm-h($default-padding, 2px);
+      @include pm-v($default-pm-huge, 1px);
+      @include pm-h($default-pm, 2px);
     }
 
     &Add {
@@ -75,7 +75,7 @@
         }
         > button {
           @include size(40px);
-          @include pm($default-big-padding, 0);
+          @include pm($default-pm-big, 0);
           border-radius: 50%;
           background-color: $theme-color-dark;
         }

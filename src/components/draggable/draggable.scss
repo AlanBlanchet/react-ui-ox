@@ -1,0 +1,43 @@
+@import "@Root/constants";
+@import "@Root/mixins";
+
+.drag {
+  &gable {
+    background-color: red;
+    display: inline-block;
+    cursor: pointer;
+
+    &Image {
+      position: fixed;
+      background-color: red;
+      @include pm($default-pm, 0);
+      transform-origin: top left;
+      transform: rotateZ(45deg);
+
+      * {
+        padding: 0;
+        background-color: transparent;
+      }
+    }
+  }
+
+  &Slot {
+    @include backgroundTheme();
+    @include flex();
+    @include border(transparent, 0);
+    display: inline-flex;
+
+    > div {
+      @include pm();
+      @include size($default-size / 2);
+      @include flex();
+      border: $default-border-size dashed $theme-text-color;
+      border-radius: $default-radius;
+
+      > div {
+        color: $theme-color-very-light;
+        user-select: none;
+      }
+    }
+  }
+}

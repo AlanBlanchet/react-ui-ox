@@ -2,7 +2,7 @@
 @import "@Root/mixins";
 
 .table {
-  @include pm(0, $default-big-margin);
+  @include pm(0, $default-pm-big);
   @include border(
     $theme-color-light,
     $default-border-size,
@@ -17,7 +17,7 @@
     > tr {
       > td,
       > th {
-        @include pm($default-big-padding, 0);
+        @include pm($default-pm-big, 0);
         border: 1px solid $theme-color-light-see-though;
       }
     }

@@ -1,18 +1,18 @@
 @import "@Root/constants";
 
-@mixin pm($padding: $default-padding, $margin: $default-margin) {
+@mixin pm($padding: $default-pm, $margin: $default-pm) {
   @include pm-v($padding, $margin);
   @include pm-h($padding, $margin);
 }
 
-@mixin pm-v($padding: $default-padding, $margin: $default-margin) {
+@mixin pm-v($padding: $default-pm, $margin: $default-pm) {
   padding-top: $padding;
   padding-bottom: $padding;
   margin-top: $margin;
   margin-bottom: $margin;
 }
 
-@mixin pm-h($padding: $default-padding, $margin: $default-margin) {
+@mixin pm-h($padding: $default-pm, $margin: $default-pm) {
   padding-left: $padding;
   padding-right: $padding;
   margin-left: $margin;
@@ -20,8 +20,8 @@
 }
 
 @mixin pm-flex(
-  $padding: $default-padding,
-  $margin: $default-margin,
+  $padding: $default-pm,
+  $margin: $default-pm,
   $direction: row,
   $content: center,
   $items: center
@@ -34,11 +34,12 @@
   $color: $theme-border,
   $size: $default-border-size,
   $radius: $default-radius,
-  $type: border-box
+  $sizing: border-box,
+  $type: solid
 ) {
-  border: $size solid $color;
+  border: $size $type $color;
   border-radius: $radius;
-  box-sizing: border-box;
+  box-sizing: $sizing;
 }
 
 @mixin backgroundTheme(

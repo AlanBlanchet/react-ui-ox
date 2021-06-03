@@ -44,15 +44,10 @@ $default-outline-size: $default-border-size;
 $default-radius: 5px;
 $default-big-radius: 7px;
 
-$default-padding-small: 2px;
-$default-padding: 5px;
-$default-big-padding: 8px;
-$default-element-padding: 10px;
-
-$default-margin-small: $default-padding-small;
-$default-margin: $default-padding;
-$default-big-margin: $default-big-padding;
-$default-element-margin: $default-element-padding;
+$default-pm-small: 2px;
+$default-pm: 5px;
+$default-pm-big: 8px;
+$default-pm-huge: 10px;
 
 $default-font-size: 1em;
 $default-header-font-size: 1.2em;

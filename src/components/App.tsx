@@ -1,8 +1,11 @@
 import "../global.scss";
 import * as React from "react";
 import SelectionInputAdd from "@Components/input/SelectionInputAdd";
-import Table, { TablePropsData } from "./table/Table";
-import LabelButton from "./button/LabelButton";
+import Table, { TablePropsData } from "@Components/table/Table";
+import LabelButton from "@Components/button/LabelButton";
+import Draggable from "@Components/draggable/Draggable";
+import DragSlot from "@Components/draggable/DragSlot";
+import Animation from "@Components/animate/Animation";
 
 export interface AppProps {}
 
@@ -26,6 +29,10 @@ class App extends React.Component<AppProps, AppState> {
 
     return (
       <div>
+        <Draggable>
+          <h5>Button</h5>
+        </Draggable>
+        <DragSlot></DragSlot>
         <LabelButton title={"Hello"} description={"AAAALO"}></LabelButton>
         <Table data={data}>Alo</Table>
         <SelectionInputAdd
@@ -43,6 +50,16 @@ class App extends React.Component<AppProps, AppState> {
           addName={"Ajouter Catégorie"}
           noDataLabel={`Pas de catégorie`}
         />
+        <Animation animations="wiggle">
+          <div>SALUT</div>
+        </Animation>
+        <Animation animations="circle">
+          <div>SALUT</div>
+        </Animation>
+        <Animation animations="poke">
+          <div>SALUT</div>
+        </Animation>
+        <Animation animations={`grow`}>HELLO YOU</Animation>
       </div>
     );
   }

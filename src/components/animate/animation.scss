@@ -1,0 +1,20 @@
+@import "@Root/constants";
+@import "@Root/mixins";
+
+.animation {
+  position: relative;
+  display: inline-block;
+  > * {
+    animation: animation-motion infinite;
+    display: inline-block;
+  }
+}
+
+@keyframes animation-motion {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
