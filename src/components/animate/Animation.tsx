@@ -11,7 +11,14 @@ export interface AnimationState {}
 class Animation extends React.Component<AnimationProps, AnimationState> {
   applyTemplate = (anim: ANIMATION_OBJ): ANIMATION_OBJ => {
     if ("template" in anim && anim.template != undefined)
-      return { ...this.applyTemplate(anim.template()), ...(anim as {}) };
+      return {
+        ...this.applyTemplate(
+          typeof anim.template == "function"
+            ? anim.template()
+            : ANIMATIONS[anim.template]
+        ),
+        ...(anim as {})
+      };
     return anim;
   };
 
@@ -49,17 +56,29 @@ class Animation extends React.Component<AnimationProps, AnimationState> {
       Anim = styled.div(
         () => ({}),
         css`
-          animation: ${kf} 1s ease infinite
-            ${typeof anim == "object" ? ", animation-motion 1s infinite" : ""};
+          animation-name: ${kf}${typeof anim == "object" ? ", animation-motion" : ""} !important;
         `
       );
     } else {
       Anim = styled.div(() => ({}));
     }
 
+    const props = { ...this.props };
+    delete props["className"];
+    delete props["children"];
+
+    const style = Object.assign(
+      { ...(props.style ?? {}) },
+      { ...(anim as {}) } ?? {}
+    );
+
+    delete props["style"];
+
     return (
       <div className={`animation ${className}`}>
-        <Anim style={{ ...(anim as {}) }}>{children}</Anim>
+        <Anim style={style} {...props}>
+          {children}
+        </Anim>
       </div>
     );
   }
@@ -72,7 +91,7 @@ export interface ANIMATION_OBJ_CSS extends React.CSSProperties {
 }
 
 export interface ANIMATION_OBJ extends React.CSSProperties {
-  template?: Function;
+  template?: ANIMATION_TYPE | Function;
   keyframes?: ANIMATION_OBJ_CSS[];
 }
 
@@ -100,7 +119,8 @@ export const ANIMATIONS: {
     offsetPath: "path('M0,0 V 10Z')",
     offsetRotate: "0deg",
     animationDuration: "0.5s",
-    animationTimingFunction: "ease-in"
+    animationTimingFunction: "ease-in",
+    animationIterationCount: "infinite"
   },
   wiggle: {
     transform: "translate(50%, 50%)",

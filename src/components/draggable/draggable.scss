@@ -3,21 +3,17 @@
 
 .drag {
   &gable {
+    position: relative;
     background-color: red;
     display: inline-block;
     cursor: pointer;
+    user-select: none;
+    padding: 0px;
 
     &Image {
-      position: fixed;
-      background-color: red;
-      @include pm($default-pm, 0);
-      transform-origin: top left;
-      transform: rotateZ(45deg);
-
-      * {
-        padding: 0;
-        background-color: transparent;
-      }
+      display: block;
+      user-select: none;
+      cursor: grabbing;
     }
   }
 
@@ -38,6 +34,12 @@
         color: $theme-color-very-light;
         user-select: none;
       }
+    }
+
+    &Anim {
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

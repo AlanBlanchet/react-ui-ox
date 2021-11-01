@@ -2,6 +2,9 @@
 @import "@Root/mixins";
 
 body {
+  position: relative;
+  top: 0;
+  left: 0;
   background-color: rgb(63, 63, 63);
   color: $theme-text-color;
   font-family: Arial;
@@ -28,6 +31,13 @@ textarea {
 
 span {
   display: inline-block;
+}
+
+#external {
+  @include position(fixed, 0, 0);
+  &s {
+    @include position(fixed, 0, 0);
+  }
 }
 
 *::-webkit-scrollbar-track {

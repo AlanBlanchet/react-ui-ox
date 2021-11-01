@@ -1,4 +1,4 @@
-import "../global.scss";
+import "@Root/global.scss";
 import * as React from "react";
 import SelectionInputAdd from "@Components/input/SelectionInputAdd";
 import Table, { TablePropsData } from "@Components/table/Table";
@@ -29,12 +29,16 @@ class App extends React.Component<AppProps, AppState> {
 
     return (
       <div>
-        <Draggable>
+        <Draggable
+          data={{ value: 134 }}
+          group="test"
+          dragElement={<div>ALLLO</div>}
+        >
           <h5>Button</h5>
         </Draggable>
-        <DragSlot></DragSlot>
+        <DragSlot group="test"></DragSlot>
         <LabelButton title={"Hello"} description={"AAAALO"}></LabelButton>
-        <Table data={data}>Alo</Table>
+        <Table data={data}></Table>
         <SelectionInputAdd
           data={[
             "AAAA",

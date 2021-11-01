@@ -3,9 +3,13 @@
 
 .animation {
   position: relative;
+  top: 0;
+  left: 0;
   display: inline-block;
-  > * {
-    animation: animation-motion infinite;
+  width: 100%;
+  height: 100%;
+  > div {
+    animation: 1s animation-motion infinite;
     display: inline-block;
   }
 }
